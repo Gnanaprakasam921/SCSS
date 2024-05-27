@@ -1,0 +1,28 @@
+body {
+  background-color: blue;
+  color: white;
+}
+
+.main {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  margin: 0 auto;
+}
+.main .main_para1 {
+  font-weight: 700;
+  color: red;
+}
+.main .main_para1:hover {
+  color: rgb(6, 3, 4);
+}
+
+@media (max-width: 800px) {
+  .main {
+    flex-direction: column;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

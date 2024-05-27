@@ -1,0 +1,108 @@
+@import './reset';
+@import './variable';
+
+// Funtion
+@function weight($weight-name) {
+    @return map-get($font-weights, $weight-name )
+}
+
+@mixin flexCenter ($direction) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: $direction;
+}
+
+@mixin theme($light-theme: true) {
+    @if $light-theme {
+        background-color: lighten($primary, 100%);
+        color: darken($text-color, 100%);
+    }
+}
+
+@mixin mobile {
+    @media (max-width:$mobile) {
+        @content;
+    }
+
+}
+
+body {
+
+    background-color: $primary;
+    color: $text-color;
+
+
+}
+
+.main {
+    width: 80%;
+    @include flexCenter(row);
+    width: calc(80%-40%); // We use with or without calc
+    margin: 0 auto;
+    // margin: 0 auto;
+    // display: flex;                 we use mixin andu just called mixed
+    // justify-content: center;
+    // align-items: center;
+
+    //  We use Diffrent method used for inside the content
+
+    // .main_para
+    // {
+    //     font-weight: map-get($font-weights , bold );
+    //     color: red;
+
+
+    //     &:hover
+    //         {
+    //             color: pink;
+    //         }
+    // }
+
+
+    //  &_para
+    // {
+    //     font-weight: map-get($font-weights , bold );
+    //     color: red;
+
+    // &:hover
+    // {
+    //     color: pink;
+    // }
+
+    // }
+
+
+    #{&}_para1 {
+        font-weight: map-get($font-weights , bold); // using funciton variable
+        color: red;
+
+        &:hover {
+            color: rgb(222, 144, 170);
+        }
+    }
+
+    #{&}_para2 
+    {
+        @extend .main_para1;
+
+        &:hover {
+            color: $accent-color;
+        }
+    }
+
+    @include mobile 
+    {
+        flex-direction: column;
+
+        &:hover {
+            color: $accent-color;
+        }
+    }
+
+
+}
+
+.light {
+    @include theme($light-theme: false);
+}

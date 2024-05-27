@@ -1,0 +1,265 @@
+@import "_color.scss";
+@import "_font.scss";
+@import "_button.scss";
+
+@import "_funcion.scss";
+@import "_alert.scss";
+@import "_mixin";
+
+// @import "sass:math";
+ //rem      variable values number
+$font_weight: (
+    "300",
+    "400",
+    "500"
+); // this is list
+
+$alart_color: (
+    "Primary":green,
+    "success":blue,
+    "danger":red
+); //map
+
+$dark_mode: false; //bool
+
+// $theme_color: null; //null
+
+
+// interpolation see the css file
+
+$profile-pic: "green";
+
+// .profile-pic
+// {
+//     background-image: url('/Practice2/image/green.jpg');
+// }
+
+a {
+    text-decoration: none;
+    color: black;
+
+}
+
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px;
+    margin: 30px;
+
+    &_menu {
+        display: flex;
+        list-style-type: none;
+    }
+
+    &_link {
+        margin-left: 40px;
+        text-decoration: none;
+        font-size: 15px;
+    }
+
+    &_link_active
+    {
+        color: red;
+        padding: 10px;
+        border-radius: 5px;
+    }
+    &_link_active:hover
+    {
+        color: green;
+    }
+
+
+}
+
+
+body {
+    // background-image: url('/Practice2/image/green.jpg');
+    // background: no-repeat;
+    background-color:brand_color("primary");
+    margin: 0;
+    padding: 0;
+    font-size: $font-size;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.welcome_card {
+    background: #fff;
+    padding: 10px;
+    margin: 40px;
+    border-radius: 10px;
+
+    // &_para2 // we use & insted of .welcom_card
+
+        // {
+        //nested
+        // color: $app_color;
+    // }
+
+    .welcome_card_title {
+        font-size: 60px;
+    }
+
+
+
+    &_btn {
+        $app_color: gray;
+        // background-color: $app_color;
+
+        background-color: map-get($alart_color , danger); // Map using
+        margin-top: 10px;
+        border-radius: 10px;
+        // background-color: rgb(175, 23, 23);
+        border: none;
+        padding: 5px 10px;
+        color: white;
+
+    }
+
+
+
+
+
+}
+
+
+// .welcome_card .para
+// {
+//     color: $app_color;
+// }
+
+
+//Operator
+
+//Equality operator  // 
+$num1:1;
+$num1:2;
+
+@debug "results:#{num1 ==num2 }";
+@debug "results:#{num1 !=num2 }";
+
+//Relational 
+@debug 100 > 50; // true
+@debug 10px < 17px; // true
+@debug 96px >= 1in; // true
+@debug 1000ms <= 1s; // true
+
+
+//numeric
+
+@debug 10s + 15s; // 25s
+@debug 1in - 10px; // 0.8958333333in
+@debug 5px * 3px; // 15px*px
+@debug 1in % 9px; // 0.0625in
+
+// string
+@debug "Helvetica" + " Neue"; // "Helvetica Neue"
+@debug sans- + serif; // sans-serif
+@debug sans - serif; // sans-serif
+
+
+//boolean
+// true or not
+
+@debug not true; // false
+@debug not false; // true
+
+@debug true and true; // true
+@debug true and false; // false
+
+@debug true or false; // true
+@debug false or false; // false
+
+
+//If Else
+//<3 color red , >3  and <6 color orange
+// >6 color blue
+// p{
+//     $text-limt:7;
+
+// @if $text-limt<=3
+// {
+//     color: red;
+// }
+// @elseif $text-limt>3 and $text-limt<=6
+// {
+//     color: orange;
+// }
+// @else 
+// {
+// color: blue;
+// }
+// }
+
+@mixin avatar($size,$cirle:false)
+{
+    width: $size;
+    height: $size;
+
+    @if $cirle
+    {
+        border-radius: $size/2;
+        // border-radius: math.div($size,2);
+    }
+}
+.squre_av
+{
+    @include avatar(100px)
+
+}
+
+.cirle_av
+{
+    @include avatar(100px, $cirle:true)
+}
+
+// for
+// @for $i from 1 through  6   // we ise to also insted of through
+// {
+//     h#{$i}{
+//         font-size: 10px *$i;
+//         color: rgb(random(255),random(255),random(255));
+//     }
+    
+// }
+
+// While
+
+$count:1;
+@while $count<10
+{
+    h#{$count}
+    {
+        font-size:10px*$count;
+        color: rgb(random(255),random(255),random(255)); ;
+    }
+    $count:$count+1;
+}
+
+
+// Each
+
+$spacing:1,2,3,4,5,6;
+$dir:top, bottom, left, right;
+
+@each $i in $spacing
+{
+
+
+
+.m-#{$i}
+{
+    margin: #{$i}rem
+}
+@each $j in $dir{
+    @debug "Direction:" $j;
+
+    .m#{str-slice($j,0,1)}-#{$i}
+    {
+        margin-#{$j}:#{$i}rem !important;
+    }
+}
+}
+
+
+

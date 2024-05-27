@@ -1,0 +1,17 @@
+@use "_mixin.scss"  as m;
+
+.btn
+{
+    
+    @include m.btn(#000);
+    &_pri
+    {
+        @include m.btn(#000);
+        background-color: aqua;
+    }
+    &_suc
+    {
+        @include m.btn(#000);
+        background-color: chartreuse;
+    }
+}

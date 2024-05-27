@@ -1,0 +1,4 @@
+@function brand_color($varient)
+{
+   @return map-get($theme-color, $varient )
+}

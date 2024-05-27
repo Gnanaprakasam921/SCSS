@@ -1,0 +1,24 @@
+@import '_textcolor.scss';
+@import '_variable.scss';
+
+.main
+{
+    &_para
+    {
+        font-size: $hfont_size;
+    }
+    &_para_cont
+    {
+        font-size: $cfont_size;
+        &_tag
+        {
+            color: $colorsec;
+        }
+        &_dis
+        {
+            color: $colorpri;
+        }
+        
+    }
+
+}

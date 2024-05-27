@@ -1,0 +1,27 @@
+.main {
+  height: 500px;
+  width: 100%;
+  background-color: rgb(243, 233, 219);
+}
+.main_cal1 {
+  height: 440px;
+  width: 45%;
+  background-color: white;
+  margin: 2%;
+  float: left;
+}
+.main_cal1 p {
+  margin: 10px;
+}
+.main_cal2 {
+  height: 440px;
+  width: 45%;
+  float: left;
+  background-color: white;
+  margin: 2%;
+}
+.main_cal2 p {
+  margin: 10px;
+}
+
+/*# sourceMappingURL=style.css.map */

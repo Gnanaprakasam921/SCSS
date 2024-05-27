@@ -1,0 +1,49 @@
+.main {
+  height: 400px;
+  width: 100%;
+  background-color: rgb(213, 224, 240);
+  border: 1px solid black;
+}
+.main_cal1 {
+  height: 400px;
+  width: 30%;
+  float: left;
+  background-color: rgb(255, 255, 255);
+  margin-left: 2.5%;
+}
+.main_cal1_pic {
+  margin-left: 35%;
+  height: 70px;
+}
+.main_cal1_head {
+  font-size: 1.3rem;
+  text-align: center;
+}
+.main_cal1_des {
+  margin: 20px;
+  text-align: center;
+}
+.main_cal1_foot {
+  margin: 10px 30% 10px 30%;
+  border: 1px solid red;
+  color: red;
+  border-radius: 30px;
+  text-align: center;
+  padding: 10px;
+}
+.main_cal2 {
+  height: 400px;
+  width: 30%;
+  float: left;
+  margin-left: 2.5%;
+  background-color: rgb(255, 255, 255);
+}
+.main_cal3 {
+  height: 400px;
+  width: 30%;
+  float: left;
+  margin-left: 2.5%;
+  background-color: rgb(255, 255, 255);
+}
+
+/*# sourceMappingURL=style.css.map */

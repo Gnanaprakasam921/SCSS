@@ -1,0 +1,14 @@
+.main_para {
+  font-size: 1.3rem;
+}
+.main_para_cont {
+  font-size: 1rem;
+}
+.main_para_cont_tag {
+  color: gray;
+}
+.main_para_cont_dis {
+  color: blue;
+}
+
+/*# sourceMappingURL=style.csss.map */
